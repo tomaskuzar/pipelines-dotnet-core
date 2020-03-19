@@ -10,6 +10,8 @@ pool:
   vmImage: 'ubuntu-16.04' # examples of other options: 'macOS-10.14', 'vs2017-win2016'
 
 variables:
+  solution: '**/*.sln'
+  buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
 
 steps:
@@ -29,7 +31,6 @@ steps:
   inputs:
     pathtoPublish: '$(Build.ArtifactStagingDirectory)' 
     artifactName: 'myWebsiteName'
-
 
 - task: DotNetCoreCLI@2
   inputs:
